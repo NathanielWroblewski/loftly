@@ -11,9 +11,12 @@ gem 'jquery-rails'
 gem 'sass-rails', '~> 4.0.3'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'unicorn'
 
 group :development do
   gem 'spring'
 end
 
-# gem 'unicorn'
+group :production do
+  gem 'rails_12factor'
+end
