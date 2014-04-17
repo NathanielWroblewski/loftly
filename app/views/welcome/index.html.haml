@@ -4,11 +4,54 @@
 / Finalize your subscription
 #homepage
   %h1#logo.centered Loftly
+  %p#subtitle.centered.hide-for-small
+    Win the San Francisco housing game by
+    %br
+    automating your search and introductions
+
   #scroll.centered
     %p Scroll Down
     = render 'shared/chevron_down.svg'
+%hr.divide
 .row
-  .small-12.columns
-  %hr
-  %hr
-  %hr
+  .small-10.columns.small-offset-1.explanation
+    %br
+    %br
+    %h2 How It Works
+    .row
+      .small-12.medium-6.columns.step
+        %h1 01
+        %p Loftly listens across the internet for listings that interest you and notifies you when new listings are posted.
+      .small-12.medium-6.columns.zero-pad-left
+        = image_tag 'apartment-01.jpg'
+    .row
+      .small-12.medium-6.columns.step{style: 'float:right;'}
+        %h1 02
+        %p Let Loftly introduce you to the landlord the moment the listing goes live, so that you'll always be first in line.
+      .small-12.medium-6.columns.zero-pad-right{style: 'float:left;'}
+        = image_tag 'apartment-02.jpg'
+    .row
+      .small-12.medium-6.columns.step
+        %h1 03
+        %p Tell your roomies you've got this.  Loftly brings listings to you, freeing up all that time you're spending searching.
+      .small-12.medium-6.columns.zero-pad-left
+        = image_tag 'apartment-03.jpg'
+    %br
+    %br
+    .row.call-to-action
+      .small-12.columns.centered
+        %br
+        %h1 Score a sweet place
+        %br
+        = link_to 'Get notified', '#', class: 'button'
+%br
+%br
+.footer
+  .row
+    .small-12.columns.centered
+      %br
+      %br
+      %p Facebook | Twitter
+      %br
+      %br
+
