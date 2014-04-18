@@ -151,7 +151,7 @@ h2 {
 
 /* New User Page */
 
-.preferences {
+#preferences {
   h1 {
     margin-top: 20px;
     margin-bottom: 5px;
@@ -169,19 +169,30 @@ h2 {
   }
 
   .option {
-    &:hover {
-      opacity: 0.7;
-    }
 
     img {
       width: 100%;
       min-height: 180px;
-
+      opacity: 0.7;
     }
     p {
       padding: 5px 0;
       background-color: white;
       border: 1px solid #dbdbdb;
+    }
+  }
+  .selected {
+    p {
+      border-bottom: 2px solid #7AB317;
+      border-left: 2px solid #7AB317;
+      border-right: 2px solid #7AB317;
+    }
+
+    img {
+      border-top: 2px solid #7AB317;
+      border-left: 2px solid #7AB317;
+      border-right: 2px solid #7AB317;
+      opacity: 1;
     }
   }
 

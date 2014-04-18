@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require lodash
+//= require backbone
+//= require_tree ./users
 //= require turbolinks
 //= require_tree .
 
