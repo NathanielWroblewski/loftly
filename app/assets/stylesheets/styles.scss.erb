@@ -21,6 +21,11 @@ p {
   src: asset-url("StreetscriptRedux.ttf") format("truetype");
 }
 
+h1, h2, h3 {
+  color: #222;
+  font-family: 'Marcellus', serif;
+}
+
 // Navbar //
 nav ul {
   margin-top: 10px;
@@ -82,11 +87,11 @@ nav ul {
 }
 
 h2 {
-  font-family: 'Kameron', serif;
+  font-family: 'Marcellus', serif;
   font-weight: bold;
   color: #222;
   text-align: center;
-  border-bottom: 1px solid black;
+  /*border-bottom: 1px solid black;*/
   font-size: rem-calc(56);
 }
 
@@ -128,8 +133,18 @@ h2 {
   font-size: rem-calc(36);
 }
 
+.action-button{
+  @include button-base;
+  @include button-size;
+  @include button-style(#fe1a00);
+}
+
 .footer {
   width: 100%;
   background-color: #efefef;
   border-top: 1px solid #dbdbdb;
+
+  .copyright {
+    color: #aaa;
+  }
 }
