@@ -8,3 +8,4 @@ class Loftly.ApplicationRouter extends Backbone.Router
 
   newUser: ->
     new Loftly.Users.NewView
+      model: new Loftly.UserModel

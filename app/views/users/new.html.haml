@@ -6,13 +6,13 @@
   .options
     .row
       .small-10.columns.small-offset-1.centered
-        .small-12.medium-4.columns.option.selected
+        .small-12.medium-4.columns.option.selected{data: {bedrooms: '1'}}
           = image_tag '01-bedroom.jpg'
           %p One Bedroom
-        .small-12.medium-4.columns.option
+        .small-12.medium-4.columns.option{data: {bedrooms: '2'}}
           = image_tag '02-bedroom.jpg'
           %p Two Bedroom
-        .small-12.medium-4.columns.option
+        .small-12.medium-4.columns.option{data: {bedrooms: '3'}}
           = image_tag '03-bedroom.jpg'
           %p Three Bedroom
     .row
@@ -20,11 +20,11 @@
         .small-12.medium-6.columns
           %p
             Min Price
-            %input{type: 'number'}
+            %input.price{type: 'number', data: {price: 'min'}}
         .small-12.medium-6.columns
           %p
             Max Price
-            %input{type: 'number'}
+            %input.price{type: 'number', data: {price: 'max'}}
   .preferences-footer
     .row
       .small-10.columns.small-offset-1.centered
