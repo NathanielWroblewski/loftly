@@ -12,11 +12,11 @@ gem 'haml_coffee_assets', git: 'https://github.com/netzpirat/haml_coffee_assets'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 4.0.3'
 gem 'state_machine'
-gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 
 group :development do
+  gem 'pry'
   gem 'spring'
 end
 

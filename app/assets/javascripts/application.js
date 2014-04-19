@@ -15,9 +15,14 @@
 //= require foundation
 //= require lodash
 //= require backbone
-//= require_tree ./templates
 //= require_tree ./users
-//= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation({
+    orbit: {
+      next_on_click: false,
+      timer: false
+    }
+  });
+});
+

@@ -3,29 +3,48 @@
     .small-10.columns.small-offset-1.centered
       %h1 Set Your Preferences
       %br
-  .options
-    .row
-      .small-10.columns.small-offset-1.centered
-        .small-12.medium-4.columns.option.selected{data: {bedrooms: '1'}}
-          = image_tag '01-bedroom.jpg'
-          %p One Bedroom
-        .small-12.medium-4.columns.option{data: {bedrooms: '2'}}
-          = image_tag '02-bedroom.jpg'
-          %p Two Bedroom
-        .small-12.medium-4.columns.option{data: {bedrooms: '3'}}
-          = image_tag '03-bedroom.jpg'
-          %p Three Bedroom
-    .row
-      .small-10.columns.small-offset-1.centered.prices
-        .small-12.medium-6.columns
-          %p
-            Min Price
-            %input.price{type: 'number', data: {price: 'min'}}
-        .small-12.medium-6.columns
-          %p
-            Max Price
-            %input.price{type: 'number', data: {price: 'max'}}
+  %ul.options{data: {orbit: true}}
+    %li
+      %br
+      .row
+        .small-10.columns.small-offset-1.centered
+          .small-12.medium-4.columns.option.selected{data: {bedrooms: '1'}}
+            = image_tag '01-bedroom.jpg'
+            %p One Bedroom
+          .small-12.medium-4.columns.option{data: {bedrooms: '2'}}
+            = image_tag '02-bedroom.jpg'
+            %p Two Bedroom
+          .small-12.medium-4.columns.option{data: {bedrooms: '3'}}
+            = image_tag '03-bedroom.jpg'
+            %p Three Bedroom
+      .row
+        .small-10.columns.small-offset-1.centered.prices
+          .small-12.medium-6.columns
+            %p
+              Min Price
+              %input.price{type: 'number', data: {price: 'min'}}
+          .small-12.medium-6.columns
+            %p
+              Max Price
+              %input.price{type: 'number', data: {price: 'max'}}
+    %li
+      %br
+      .row
+        .small-10.columns.small-offset-1.centered
+          .small-12.medium-6.medium-offset-3.columns.centered
+            %p.email-label
+              %span.errors{style: 'display:none;'}
+                Invalid
+              Email
+              %input#email{type: 'text'}
+            %p#send-intro
+              %input#send-intro-input{type: 'checkbox', checked: true}
+              Do not send introductory emails on my behalf
+            %p
+              Your Introduction
+              %textarea{rows: 9, disabled: true}
   .preferences-footer
     .row
       .small-10.columns.small-offset-1.centered
-        .button Continue
+        .button.continue Continue
+  = link_to '', @user, id: 'complete'
