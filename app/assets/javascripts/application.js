@@ -15,6 +15,7 @@
 //= require foundation
 //= require lodash
 //= require backbone
+//= require_tree ./templates
 //= require_tree ./users
 //= require turbolinks
 //= require_tree .

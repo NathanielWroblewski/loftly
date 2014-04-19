@@ -4,9 +4,6 @@ window.Loftly.Users or= {}
 class Loftly.Users.NewView extends Backbone.View
   template: JST['users/preferences']
 
-  initialize: ->
-    @listenTo @model, 'change', @render
-
   el: '#preferences'
 
   events:
@@ -15,6 +12,7 @@ class Loftly.Users.NewView extends Backbone.View
 
   selectBedroom: (event) ->
     @model.set 'bedrooms', $(event.currentTarget).data('bedrooms')
+    @highlightSelectedBedroom()
 
   setPrice: (event) ->
     $field = $(event.currentTarget)
@@ -22,10 +20,11 @@ class Loftly.Users.NewView extends Backbone.View
     @model.set minOrMax + 'Price', $field.val()
 
   highlightSelectedBedroom: ->
+    @$el.find('.option').removeClass 'selected'
     beds = @model.get('bedrooms')
     @$el.find('.option[data-bedrooms=' + beds + ']').addClass 'selected'
 
   render: ->
     @$el.html @template(@model.attributes)
-    @hightlightSelectedBedroom()
+    @highlightSelectedBedroom()
     @
