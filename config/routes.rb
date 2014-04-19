@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :users, only: [:new, :create, :show]
+  resources :users
+
+  post '/users/:id', to: 'users#update'
 end

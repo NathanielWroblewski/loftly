@@ -1,0 +1,6 @@
+= form_tag @user do
+  %article
+    %label.amount
+      %span Amount: $30.00/mo
+
+  %script.stripe-button{src: 'https://checkout.stripe.com/checkout.js', data: { key: Rails.configuration.stripe[:publishable_key], description: 'A Loftly subscription', amount: '3000'}}

@@ -54,6 +54,6 @@ class Loftly.Users.NewView extends Backbone.View
   complete: ->
     if slug = @model.get 'slug'
       $complete = @$('#complete')
-      url = $complete.prop('href').replace 'users', 'users/' + slug
+      url = $complete.prop('href').replace 'users', 'users/' + slug + '/edit'
       $complete.prop 'href', url
       $complete[0].click()
