@@ -39,7 +39,7 @@ class Loftly.Users.NewView extends Backbone.View
       intro: @$('textarea').val()
     @emailInvalid() unless @model.save(@model.attributes,
       success: (model, response) =>
-        @model.set 'id', response.user.id
+        @model.set 'slug', response.user.slug
         @complete()
       error: =>
         @emailInvalid()
@@ -52,8 +52,8 @@ class Loftly.Users.NewView extends Backbone.View
       'color': 'white'
 
   complete: ->
-    if id = @model.get 'id'
+    if slug = @model.get 'slug'
       $complete = @$('#complete')
-      url = $complete.prop('href').replace 'users', 'users/' + id
+      url = $complete.prop('href').replace 'users', 'users/' + slug
       $complete.prop 'href', url
       $complete[0].click()
