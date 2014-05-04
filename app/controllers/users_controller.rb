@@ -15,28 +15,22 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by(slug: params[:id])
+    @plan = ENV['STRIPE_PLAN_ID']
   end
 
   def update
-    binding.pry
     begin
       customer = Stripe::Customer.create(
         email: params[:stripeEmail],
-        card:  params[:stripeToken]
-      )
-
-      charge = Stripe::Charge.create(
-        customer:    customer.id,
-        amount:      3000,
-        description: 'Loftly Stripe customer',
-        currency:    'usd'
+        card:  params[:stripeToken],
+        plan:  'loftly_monthly'
       )
 
       user = User.find_by(slug: params[:id])
       user.update_attributes(
-        stripe_token: params[:stripeToken],
-        email:        params[:stripeEmail]
+        stripe_token: params[:stripeToken]
       )
+      user.activate
       redirect_to user, notice: 'Success.'
     rescue Stripe::CardError => e
       flash[:error] = e.message

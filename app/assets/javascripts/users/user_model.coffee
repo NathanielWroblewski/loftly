@@ -5,6 +5,3 @@ class Loftly.UserModel extends Backbone.Model
     bedrooms: '1'
 
   urlRoot: '/users'
-
-  validate: ->
-    'Invalid email.' if @get('email').length < 1
