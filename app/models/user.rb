@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
   end
 
   def generate_identifier
-    id = SecureRandom.hex(4)
-    User.find_by(slug: id).nil? ? self.slug = id : generate_identifier
+    hex = SecureRandom.hex(4)
+    User.find_by(slug: id).nil? ? self.slug = hex : generate_identifier
   end
 
 end
